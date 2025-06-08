@@ -40,5 +40,5 @@ A Flask-based Movie Recommendation web app that suggests movies similar to your 
    python app.py
 6. Open http://127.0.0.1:5000 in your browser.
 
-License
+##License
 MIT License
