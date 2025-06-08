@@ -1,15 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Movie Recommender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f9ca24;
+        }
+        form {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        input[type="text"] {
+            padding: 0.8rem;
+            width: 100%;
+            max-width: 400px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+        button {
+            padding: 0.8rem 2rem;
+            background-color: #f9ca24;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #1c1c1c;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #f1c40f;
+        }
+        h3 {
+            color: #00cec9;
+            font-size: 1.5rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        li {
+            background-color: #2d3436;
+            padding: 0.8rem 1.2rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+        li:hover {
+            background-color: #636e72;
+            transform: scale(1.02);
+        }
+        @media screen and (max-width: 600px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+            button, input[type="text"] {
+                font-size: 1rem;
+            }
+            li {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h2>Enter your favourite movie name</h2>
+    <h2>🎬 Movie Recommender System</h2>
     <form method="POST">
-        <input type="text" name="movie_name" required>
-        <button type="submit">Get Recommendations</button>
+        <input type="text" name="movie_name" placeholder="Enter your favourite movie..." required>
+        <button type="submit">Get Recommendations </button>
     </form>
-
     {% if recommendations %}
         <h3>Recommended Movies:</h3>
         <ul>
