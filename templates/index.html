@@ -56,23 +56,36 @@
         h3 {
             color: #00cec9;
             font-size: 1.5rem;
+            margin-top: 2rem;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-            width: 100%;
-            max-width: 600px;
+        .recommendations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 1rem;
         }
-        li {
+        .movie-card {
+            width: 150px;
+            text-align: center;
             background-color: #2d3436;
-            padding: 0.8rem 1.2rem;
-            margin: 0.5rem 0;
-            border-radius: 8px;
-            transition: transform 0.2s ease, background-color 0.3s ease;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
         }
-        li:hover {
-            background-color: #636e72;
-            transform: scale(1.02);
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+        .movie-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .movie-card p {
+            font-size: 0.95rem;
+            color: #f1c40f;
+            margin: 0;
         }
         @media screen and (max-width: 600px) {
             h2 {
@@ -81,8 +94,8 @@
             button, input[type="text"] {
                 font-size: 1rem;
             }
-            li {
-                font-size: 0.95rem;
+            .movie-card {
+                width: 45%;
             }
         }
     </style>
@@ -91,15 +104,18 @@
     <h2>🎬 Movie Recommender System</h2>
     <form method="POST">
         <input type="text" name="movie_name" placeholder="Enter your favourite movie..." required>
-        <button type="submit">Get Recommendations </button>
+        <button type="submit">Get Recommendations</button>
     </form>
     {% if recommendations %}
         <h3>Recommended Movies:</h3>
-        <ul>
+        <div class="recommendations">
             {% for movie in recommendations %}
-                <li>{{ movie }}</li>
+                <div class="movie-card">
+                    <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+                    <p>{{ movie.title }}</p>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     {% endif %}
 </body>
 </html>
