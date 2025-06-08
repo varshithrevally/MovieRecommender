@@ -30,15 +30,19 @@ A Flask-based Movie Recommendation web app that suggests movies similar to your 
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
 2. Create and activate virtual environment:
+   ```bash
    python -m venv venv
    source venv/bin/activate
-3. Install dependencies:
+4. Install dependencies:
+   ```bash
    pip install -r requirements.txt
-4. Add your OMDB API key in app.py:
+6. Add your OMDB API key in app.py:
+   ```bash
    OMDB_API_KEY = "your_api_key_here"
-5. Run the app:
+8. Run the app:
+   ```bash
    python app.py
-6. Open http://127.0.0.1:5000 in your browser.
+10. Open http://127.0.0.1:5000 in your browser.
 
 # License
 MIT License
