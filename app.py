@@ -5,10 +5,13 @@ import requests
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import urllib.parse
+from dotenv import load_dotenv
+load_dotenv()
 
 app=Flask(__name__)
 
-OMDB_API_KEY="b3f9a715"
+import os
+OMDB_API_KEY = os.environ.get("OMDB_API_KEY")
 
 movies_data=pd.read_csv('movies.csv')
 
@@ -45,7 +48,7 @@ def recommend_movies(movie_name):
     similarity_scores=list(enumerate(similarity[index]))
     sorted_similar_movies=sorted(similarity_scores, key=lambda x: x[1], reverse=True)
     recommended_movies=[]
-    for movie in sorted_similar_movies[1:31]:
+    for movie in sorted_similar_movies[1:19]:
         idx=movie[0]
         title=movies_data.iloc[idx]['title']
         poster_url=get_movie_poster(title)
