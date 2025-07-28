@@ -30,12 +30,14 @@ A content-based movie recommendation system that suggests similar movies based o
 
 1. Clone this repository
 git clone https://github.com/varshithrevally/MovieRecommender.git
+
+2. Go to Directory in cmd
 cd MovieRecommender
 
-2. Install dependencies
+3. Install dependencies
 pip install -r requirements.txt
 
-3. Create a .env file (for local run)
+4. Create a .env file (for local run)
 OMDB_API_KEY=your_omdb_api_key_here
 
 4.streamlit run app.py
