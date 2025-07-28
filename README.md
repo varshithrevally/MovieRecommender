@@ -29,7 +29,7 @@ A content-based movie recommendation system that suggests similar movies based o
 ## 🚀 Getting Started (Run Locally)
 
 1. Clone this repository
-git clone https://github.com/your-username/MovieRecommender.git
+git clone https://github.com/varshithrevally/MovieRecommender.git
 cd MovieRecommender
 
 2. Install dependencies
